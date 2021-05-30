@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-header>
+        <h1>SalesLead</h1>
+    </mat-card-header>
+
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form) " >
+        <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+        <div class="form-group mb-2">
+            <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="name" required>
+            <div *ngIf="name.invalid && name.touched" class="validation-error">Ezt a mezőt kötelező kitölteni!</div>
+        </div>
+        <div class="form-group mb-2">
+            <input name="sid" #sid="ngModel" [(ngModel)]="service.formData.sid" class="form-control" placeholder="sid" required>
+            <div *ngIf="sid.invalid && sid.touched" class="validation-error">Ezt a mezőt kötelező kitölteni!</div>
+        </div>
+        <div class="form-group mb-2">
+            <input name="href" #href="ngModel" [(ngModel)]="service.formData.href" class="form-control" placeholder="href">
+        </div>
+        <div class="form-group mb-2">
+            <input name="creationDate" #creationDate="ngModel" [(ngModel)]="service.formData.creationDate" class="form-control" placeholder="creationDate">
+        </div>
+        
+        <div class="form-group mb-2">
+            <input name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control" placeholder="description">
+        </div>
+        <div class="form-group mb-2">
+            <input name="rating" #rating="ngModel" [(ngModel)]="service.formData.rating" class="form-control" placeholder="rating">
+        </div>
+        <div class="form-group mb-2">
+            <input name="type" #type="ngModel" [(ngModel)]="service.formData.type" class="form-control" placeholder="type">
+        </div>
+        <mat-card>
+            <label>Choose priority:</label>
+        <mat-radio-group name="priority" #priority="ngModel"
+            [(ngModel)]="service.formData.priority">
+            <mat-radio-button value="low">low</mat-radio-button>
+            <mat-radio-button value="medium">medium</mat-radio-button>
+            <mat-radio-button value="high">high</mat-radio-button>
+        </mat-radio-group>
+        </mat-card>
+        <div class="d-grid gap-2 ">
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" >Submit</button>
+        </div>
+        
+    </form>
+</mat-card>
+
+

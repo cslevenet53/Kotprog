@@ -1,0 +1,33 @@
+<mat-card>
+    <div class="table-responsive">
+        <table class="table table-hover ">
+            <thead>
+                <th>id</th>
+                <th>href</th>
+                <th>crDate</th>
+                <th>descript.</th>
+                <th>name</th>
+                <th>ratimg</th>
+                <th>type</th>
+                <th>prior.</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sal of list">
+                    <td (click)="onEdit(sal)">{{sal.sid}}</td>
+                    <td (click)="onEdit(sal)">{{sal.href}}</td>
+                    <td (click)="onEdit(sal)">{{sal.creationDate.toString()}}</td>
+                    <td (click)="onEdit(sal)">{{sal.description}}</td>
+                    <td (click)="onEdit(sal)">{{sal.name}}</td>
+                    <td (click)="onEdit(sal)">{{sal.rating}}</td>
+                    <td (click)="onEdit(sal)">{{sal.type}}</td>
+                    <td (click)="onEdit(sal)">{{sal.priority}}</td>
+                    <td><mat-icon (click)="onDelete(sal.id)" aria-hidden="false" aria-label="Example trash icon">delete</mat-icon></td>
+                    
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+    
+</mat-card>
+
